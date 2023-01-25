@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Reptile & Amphibian Shop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Unbounded:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Reptile & Amphibian Orders:</h1>
+    {% for order in orders %}
+    <div>
+        <ul>
+            <li><b>Order date:</b> {{order.order_date}} <b>Customer Name:</b> {{order.customer_name}}, <b>Total: £{{order.price}} </b> <a href= "orders/{{order.id}}">Order Details </a></li>
+        </ul>
+    </div>
+    {% endfor %}
+    <div id="img">
+        <img src="https://www.reptiledirect.com/wp-content/uploads/2021/11/banana-ball-python.jpg" alt="banana-ball">
+    </div>
+</body>
+
+</html>
